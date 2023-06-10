@@ -80,6 +80,10 @@ class User:
         if amount > 2 * self.balance:
             print(f'Loan amount exceeds twice the balance of {self.name} account')
             return
+       
+        if amount > bank.bank_balance:
+            print('Bank is bankrupt')
+            return
         
         self.balance += amount
         bank.bank_balance -= amount
